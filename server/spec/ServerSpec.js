@@ -92,7 +92,6 @@ describe('Node Server Request Listener Function', function() {
     res = new stubs.response();
 
     handler.requestHandler(req, res);
-
     expect(res._responseCode).to.equal(200);
     var messages = JSON.parse(res._data).results;
     expect(messages.length).to.be.above(0);
@@ -100,7 +99,6 @@ describe('Node Server Request Listener Function', function() {
     expect(messages[0].message).to.equal('Do my bidding!');
     expect(res._ended).to.equal(true);
   });
-
 
   it('Should 404 when asked for a nonexistent file', function() {
     var req = new stubs.request('/arglebargle', 'GET');
