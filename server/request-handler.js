@@ -50,6 +50,10 @@ var statusCode;
 
   var body = '';
   if (request.url === '/classes/messages') {
+    if (request.method === 'OPTIONS') {
+      statusCode = 200;
+    }
+    
     if (request.method === 'POST') {
       //const { headers, method, url } = request;
       //console.log('REQUEST', request);
@@ -63,7 +67,7 @@ var statusCode;
       statusCode = 201;
     } else if (request.method === 'GET') {
       statusCode = 200;
-    }
+    } 
   }
   if (request.url !== '/classes/messages') {
     statusCode = 404;
