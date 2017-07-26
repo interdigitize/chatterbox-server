@@ -16,8 +16,7 @@ module.exports.requestHandler = function(request, response) {
 
   var compose = function (statusCode, headers) {
     statusCode = statusCode || 200;
-    var test = response.writeHead(statusCode, headers);
-    console.log(test);
+    response.writeHead(statusCode, headers);
   };
 
 
